@@ -74,11 +74,18 @@ loginForm.addEventListener("submit", async event => {
 
 auth.onAuthStateChanged(async user => {
   if (user) {
-    db.collection("quotes").onSnapshot(snapshot => {
-      setupQuotes(snapshot.docs);
-      setupUI(user);
-    });
+    const idTokenResult = await user.getIdTokenResult();
+    user.admin = idTokenResult.claims.admin;
+
+    db.collection("quotes").onSnapshot(
+      snapshot => {
+        setupQuotes(snapshot.docs);
+        setupUI(user);
+      },
+      err => {}
+    );
   } else {
+    setupQuotes([]);
     setupUI();
   }
 });

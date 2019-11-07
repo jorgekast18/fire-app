@@ -9,3 +9,6 @@ const accountDetails = document.querySelector(".account-details");
 const quoteUl = document.querySelector(".quotes");
 
 const createForm = document.querySelector("#create-form");
+
+const adminItems = document.querySelectorAll(".admin");
+const adminForm = document.querySelector("#adminForm");
