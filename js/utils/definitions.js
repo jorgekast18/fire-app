@@ -7,3 +7,5 @@ const loggedOutMenu = document.querySelectorAll(".logged-out");
 const accountDetails = document.querySelector(".account-details");
 
 const quoteUl = document.querySelector(".quotes");
+
+const createForm = document.querySelector("#create-form");
