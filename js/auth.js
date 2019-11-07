@@ -71,3 +71,14 @@ loginForm.addEventListener("submit", async event => {
     signupForm.reset();
   }
 });
+
+auth.onAuthStateChanged(async user => {
+  if (user) {
+    db.collection("quotes").onSnapshot(snapshot => {
+      setupQuotes(snapshot.docs);
+      setupUI(user);
+    });
+  } else {
+    setupUI();
+  }
+});

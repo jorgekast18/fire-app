@@ -17,7 +17,7 @@
           Fire-App
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a
               href="#"
               class="white-text modal-trigger"
@@ -25,7 +25,7 @@
               >Account</a
             >
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a
               href="#"
               class="white-text modal-trigger"
@@ -33,7 +33,7 @@
               >Create Quote</a
             >
           </li>
-          <li class="logged-in">
+          <li class="logged-out" style="display: none;">
             <a
               href="#"
               class="white-text modal-trigger"
@@ -41,7 +41,7 @@
               >Login</a
             >
           </li>
-          <li class="logged-in">
+          <li class="logged-out" style="display: none;">
             <a
               href="#"
               class="white-text modal-trigger"
@@ -49,7 +49,7 @@
               >Sign Up</a
             >
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="white-text" id="logout">Logout</a>
           </li>
         </ul>
@@ -98,6 +98,39 @@
       </div>
     </div>
 
+    <div id="modal-account" class="modal">
+      <div class="modal-content center-align">
+        <h4>Account Details</h4>
+        <br />
+        <div class="account-details"></div>
+      </div>
+    </div>
+
+    <div id="modal-create" class="modal">
+      <div class="modal-content">
+        <br />
+        <form id="create-form">
+          <div class="input-field">
+            <input type="text" name="author" id="author" required />
+            <label for="author">Author</label>
+          </div>
+          <div class="input-field">
+            <textarea
+              name="message"
+              id="message"
+              class="materialize-textarea"
+            ></textarea>
+            <label for="content">Message content</label>
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Create</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 40px;">
+      <ul class="collapsible z-depth-0 quotes" style="border: none;"></ul>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
@@ -107,5 +140,6 @@
     <script src="./js/config/materialize.config.js"></script>
     <script src="./js/utils/definitions.js"></script>
     <script src="./js/auth.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
